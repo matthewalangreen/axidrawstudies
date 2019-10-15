@@ -613,7 +613,8 @@ void draw() {
 
   stroke(0, 200, 0);
   noFill();
-  rect(MousePaperLeft, MousePaperTop, 500, 500);
+  // green box for square paper
+  //rect(MousePaperLeft, MousePaperTop, 500, 500);
 
   //println(pseudoRandom());
 }

@@ -1,11 +1,10 @@
 /*
-  AxiDrawGenerative
+  Circle Packing
   
-  Matt Green
-  Fall 2018
-  Riverpoint Academy
-  
-  Based on: https://github.com/evil-mad/AxiDraw-Processing/tree/master/AxiGen1
+  Matthew Green
+  Fall 2019
+
+  Based on: https://github.com/matthewalangreen/AxiDrawGen-Spring2019
  
  */
 

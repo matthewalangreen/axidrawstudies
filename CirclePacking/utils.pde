@@ -1,3 +1,14 @@
+// Added by Matthew
+//// helper functions
+void dropPen() {
+   ToDoList = (PVector[]) append(ToDoList, new PVector(-31, 0)); //Command 31 (lower pen)
+}
+
+void raisePen() {
+   ToDoList = (PVector[]) append(ToDoList, new PVector(-30, 0)); //Command 30 (raise pen)
+}
+///////////////
+
 // Return the [x,y] of the motor position in pixels
 int[] getMotorPixelPos() {
   int[] out = {

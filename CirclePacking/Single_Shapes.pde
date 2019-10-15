@@ -21,8 +21,8 @@ void makeCircle(float x, float y, float size, float spacing) {
   // use these values for pseudo randomness in position of triangle 
    //x = x + map(randomizer.getPseudoRandom(),0,1,minDist,maxDist);
    //y = y + map(randomizer.getPseudoRandom(),0,1,minDist,maxDist);
-    x = x + map(randomizer.getPseudoRandom(),0,1,-spacing,spacing);
-   y = y + map(randomizer.getPseudoRandom(),0,1,-spacing,spacing);
+    x = x + map(randomizer.getPerlinRandom(),0,1,-spacing,spacing);
+   y = y + map(randomizer.getPerlinRandom(),0,1,-spacing,spacing);
   
    // shift the circle to center on (mouseX, mouseY)
     //x = x - size/2;

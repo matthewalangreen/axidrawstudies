@@ -15,5 +15,5 @@ void generateArtwork()
  // makeX(mouseX, mouseY);
  // makeCircle(mouseX, mouseY, random(2,30));
   // packShapes(number, sizes, spacing)
-  packShapes(20, 50, 50);
+  packShapes(20, 50, 100);
 }

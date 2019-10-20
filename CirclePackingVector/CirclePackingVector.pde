@@ -4,6 +4,8 @@ ArrayList<Node> nodes = new ArrayList<Node>();
 Randomizer distanceRandomizer; // used to generate Perlin randomness
 Randomizer radiusRandomizer; // used to generate Perlin randomness
 
+boolean recording; // to track state
+
 void setup() {
  size(600,600);
  background(255);
@@ -18,37 +20,31 @@ void setup() {
  radiusRandomizer = new Randomizer(0,2.5);
 }
 
-int count = 0;
+int count = 0; // to show iterations
 
 
 void draw() {
-  //background(255);
+  background(255);
+  if (recording) {
+   beginRecord(SVG, "frame-####.svg"); 
+  }
   count++;
   println(count);
-  //stroke(0,255,0);
-  //strokeWeight(4);
-  //ellipse(width/2, height/2, 300,300);
-  //stroke(0);
-  //strokeWeight(1);
-  // make new node candiditate
-
-  Node n = new Node();
+  
+  Node n = new Node(); // make candidate
   
   // if it passes the tests, add it to the ArrayList
   boolean result = true;
   
   for(int i = 0; i<nodes.size(); i++) {
 
-    
+    // if the candidate node "n" doesn't fit... shrink it and check again...
     while (n.overlapQ(nodes.get(i))) {
       n.shrinkRadius(0.1);
       if(n.getRadius() < 1) {
         result = false;
       }
     }
-   //if (n.overlapQ(nodes.get(i))) {
-   //  result = false;
-   //}
    
    // early exit... this helped a bit
    if (result == false) {
@@ -59,16 +55,21 @@ void draw() {
   // if the circle didn't overlap with any others then add it to nodes
   if (result == true) {
     nodes.add(n);
-    n.show();
+   // n.show();
   }
+  
+  for (int p = 0; p<nodes.size(); p++) {
+   nodes.get(p).show(); 
+  }
+  
+  if (recording) {
+     endRecord();
+     recording = false;
+  }
+    
+}
 
-  
-  
-  // show all nodes
-  //for(int i = 0; i<nodes.size(); i++) {
-  //  nodes.get(i).show();
-  //}
-  
-  //endRecord();
+void mousePressed() {
+  recording = true; 
 }
  
